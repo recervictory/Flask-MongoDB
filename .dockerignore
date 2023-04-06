@@ -1,0 +1,6 @@
+# env folder
+env/
+
+#Ignoring git and cache folders
+.git
+.cache
