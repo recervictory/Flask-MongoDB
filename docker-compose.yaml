@@ -1,6 +1,13 @@
 version: '3' # latest version of docker composer
 
 services: # All container service lists
+  flask:
+    build: ./Flask
+    ports: 
+    - 5000:5000
+    environment: 
+            PORT: 5000
+            FLASK_DEBUG: 1
 
   mongodb: # container name
     image: mongo # image name and version

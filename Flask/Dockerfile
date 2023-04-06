@@ -1,10 +1,7 @@
-FROM python:3.8-slim-buster
-
-WORKDIR /Flask
-
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
-
-COPY . /Flask
-
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+FROM python:3.6
+RUN mkdir /usr/src/app/
+COPY . /usr/src/app/
+WORKDIR /usr/src/app/
+EXPOSE 5000
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]
