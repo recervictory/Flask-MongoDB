@@ -12,4 +12,11 @@ This document is a comprehensive tutorial on how to use MongoDB in a Flask appli
 
 Overall, this tutorial provides a step-by-step guide on how to use MongoDB in a Flask application, making it easy for developers to create a fully-functional web application with a database backend.
 
+# Command:
+To Run Docker-compose
+```
+# Flask run on port 5000
+docker-compose up
+```
+
 ### 🔗 [😎Notion link](https://www.notion.so/recervictory/How-To-Use-MongoDB-in-a-Flask-Application-ade01fe308d3420e9da24c6ae3dddb5f?pvs=4)
