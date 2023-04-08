@@ -2,7 +2,9 @@ version: '3' # latest version of docker composer
 
 services: # All container service lists
   flask:
-    build: ./Flask
+    container_name: Flask
+    image: flask
+    build: ./Flask #! Path For the Dockerfile to be built
     ports: 
     - 5000:5000
     environment: 
@@ -10,8 +12,9 @@ services: # All container service lists
             FLASK_DEBUG: 1
 
   mongodb: # container name
+    container_name: MongoDB
     image: mongo # image name and version
-    hostname: mongo
+    hostname: mongo #! Hostname to coonet by Flask
     ports:
     - 27017:27017 # Host:Container
     environment:
@@ -19,6 +22,7 @@ services: # All container service lists
       MONGO_INITDB_ROOT_PASSWORD: password
 
   mongo-express: # container name
+    container_name: MongoExpress
     image: mongo-express 
     ports: # image name and version
     - 8081:8081 # Host:Container
