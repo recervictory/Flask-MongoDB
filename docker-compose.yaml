@@ -10,6 +10,7 @@ services: # All container service lists
     environment: 
             PORT: 5000
             FLASK_DEBUG: 1
+            HOST: 'docker'
 
   mongodb: # container name
     container_name: MongoDB
