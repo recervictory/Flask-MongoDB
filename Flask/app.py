@@ -8,7 +8,7 @@ from bson.objectid import ObjectId
 app = Flask(__name__)
 
 #! The username and password for mongodab database connections
-client = MongoClient("mongodb://admin:password@localhost:27017")
+client = client = MongoClient("mongodb://admin:password@mongo:27017")
 
 db = client.flask_db
 todos = db.todos

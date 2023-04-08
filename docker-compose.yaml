@@ -11,6 +11,7 @@ services: # All container service lists
 
   mongodb: # container name
     image: mongo # image name and version
+    hostname: mongo
     ports:
     - 27017:27017 # Host:Container
     environment:
