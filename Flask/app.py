@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 #! The username and password for mongodab database connection
 try:
-    if os.getenv('HOST') =='docker':
+    if os.getenv('HOST') =='mongodb':
         client = MongoClient("mongodb://admin:password@mongo:27017")
     else:
         client = MongoClient('localhost', 27017, username='admin', password='password')
