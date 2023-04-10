@@ -4,7 +4,7 @@ services: # All container service lists
   flask:
     container_name: Flask
     #! Images from the repository
-    image: recervictory/flask-mongo:v1.0
+    image: recervictory/flask-mongo:v1.3
     # Host:Conatiner Port
     ports: 
     - 5000:5000 
@@ -23,6 +23,8 @@ services: # All container service lists
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongo-data:/data/db
 
   mongo-express: # container name
     container_name: MongoExpress
@@ -33,3 +35,7 @@ services: # All container service lists
       ME_CONFIG_MONGODB_SERVER: mongodb
       ME_CONFIG_MONGODB_ADMINUSERNAME: admin
       ME_CONFIG_MONGODB_ADMINPASSWORD: password
+
+volumes:
+  mongo-data:
+    driver: local # Create data on local file system

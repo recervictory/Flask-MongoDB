@@ -12,6 +12,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: password
     networks:
       - mongo-networks
+    volumes:
+      - mongo-data:/data/db
 
   mongo-express:
     container_name: MongoExpress
@@ -28,3 +30,6 @@ services:
 networks:
   mongo-networks:
     driver: bridge
+  volumes:
+    mongo-data:
+		  driver: local

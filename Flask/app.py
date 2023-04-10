@@ -7,6 +7,7 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
+print("🧩 Host: " + str(os.getenv('HOST')))
 #! The username and password for mongodab database connection
 try:
     if os.getenv('HOST') =='mongodb':
