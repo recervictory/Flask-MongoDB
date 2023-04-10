@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <title>FlaskApp</title>
     <style>
-        .todo {
+        /* For important degree */
+        .important {
+            background-color: #F06067;
             padding: 20px;
             margin: 10px;
-            background-color: #eee;
+        }
+        
+        /* For unimportant degree */
+        .unimportant {
+            background-color: #a7c957;
+            padding: 20px;
+            margin: 10px;
         }
     </style>
 </head>
@@ -39,8 +47,8 @@
     </form>
     <hr>
     {% for todo in todos %}
-        <div class="todo">
-            <p>{{ todo['content'] }} <i>({{ todo['degree']}})</i></p>
+        <div class="{{ 'important' if todo['degree'] == 'Important' else 'unimportant' }}">
+            <p >{{ todo['content'] }} <i >{{ todo['degree'] }}</i></p>
             <form method="POST" action="{{ url_for('delete', id=todo['_id']) }}" >
                 <input type="submit" value="Delete Todo"
                        onclick="return confirm('Are you sure you want to delete this entry?')">
